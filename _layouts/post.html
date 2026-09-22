@@ -3,7 +3,7 @@ layout: default
 ---
 <article class="section post-article">
   <div class="container post-container">
-    <header class="post-header">
+    <div class="post-header">
       {% if page.featured_image %}
       <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}" class="post-featured-img">
       {% endif %}
@@ -30,7 +30,7 @@ layout: default
         </span>
         {% endif %}
       </div>
-    </header>
+    </div>
 
     <div class="post-content">
       {{ content }}

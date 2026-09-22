@@ -42,7 +42,10 @@ body {
 }
 
 /* ── Header & Navigation ──────────────────────────────────────────────────── */
-header {
+/* Target only the site's top-level header (not semantic <header> elements
+   inside post articles or page sections). */
+body > header,
+.site-header {
   background: var(--primary-color);
   position: fixed;
   width: 100%;
