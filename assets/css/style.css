@@ -12,14 +12,16 @@
 }
 
 :root {
-  --primary-color:  #1a1a2e;
-  --secondary-color:#16213e;
-  --accent-color:   #e94560;
-  --light-color:    #f1f1f1;
-  --text-color:     #333;
-  --white:          #ffffff;
-  --gray:           #666;
-  --light-gray:     #f8f9fa;
+  --primary-color:   #1a1a2e;
+  --secondary-color: #16213e;
+  --accent-color:    #e94560;
+  --light-color:     #f1f1f1;
+  --text-color:      #333;
+  --white:           #ffffff;
+  --gray:            #666;
+  --light-gray:      #f8f9fa;
+  /* Navbar height — updated in media queries for mobile stacked layout */
+  --navbar-height:   74px;
 }
 
 html {
@@ -144,9 +146,10 @@ header {
 .hero {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   color: var(--white);
-  padding: 150px 20px 100px;
+  /* <main> already provides margin-top equal to --navbar-height, so no
+     extra margin needed here. The generous padding creates visual breathing room. */
+  padding: 100px 20px 80px;
   text-align: center;
-  margin-top: 70px;
 }
 
 .hero-content h2 {
@@ -214,8 +217,10 @@ header {
 .bg-light { background: var(--light-gray); }
 
 /* ── Page content (secondary pages) ──────────────────────────────────────── */
+/* <main> margin-top already clears the fixed navbar; add only a comfortable
+   visual gap on top of the .section base padding (80px). */
 .page-content {
-  padding-top: 120px;
+  padding-top: 40px;
 }
 .page-content .club-text h3 {
   color: var(--primary-color);
@@ -470,7 +475,8 @@ header {
 .blog-read-more:hover { text-decoration: underline; }
 
 /* ── Blog List Page ───────────────────────────────────────────────────────── */
-.blog-list { padding-top: 120px; }
+/* Same rationale as .page-content above. */
+.blog-list { padding-top: 40px; }
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -524,7 +530,8 @@ header {
 .pagination .disabled { opacity: 0.4; cursor: default; }
 
 /* ── Post Article ─────────────────────────────────────────────────────────── */
-.post-article { padding-top: 120px; }
+/* Same rationale as .page-content above. */
+.post-article { padding-top: 40px; }
 .post-container { max-width: 800px; }
 .post-featured-img {
   width: 100%; border-radius: 10px; margin-bottom: 2rem;
@@ -677,6 +684,10 @@ footer {
 
 /* ── Responsive ───────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
+  /* On mobile the nav items wrap below the logo making the navbar taller.
+     We update --navbar-height so <main>'s margin-top stays correct. */
+  :root { --navbar-height: 110px; }
+
   .hamburger { display: none !important; } /* nav stays a scrollable strip */
   .navbar .container { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
   .hero-content h2  { font-size: 2rem; }
@@ -690,8 +701,13 @@ footer {
 }
 
 @media (max-width: 480px) {
+  /* Navbar wraps even more on very small screens. */
+  :root { --navbar-height: 130px; }
+
   .hero-content h2  { font-size: 1.5rem; }
-  .section          { padding: 50px 20px; }
+  /* Reduce generic section padding but do NOT override page-specific padding-top
+     rules that keep content below the navbar. */
+  .section          { padding-bottom: 50px; padding-left: 20px; padding-right: 20px; }
   .modal-content    { padding: 2rem; }
   .modal-content h2 { font-size: 1.5rem; }
   .modal-btn        { font-size: 1rem; padding: 1rem 1.5rem; }
