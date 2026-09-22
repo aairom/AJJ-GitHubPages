@@ -1,0 +1,23 @@
+# =============================================================================
+# Membres du comité directeur — Asnières Jujitsu
+# Chaque entrée apparaît sur la page /comite-directeur/
+#
+# Pour ajouter un membre :
+#   1. Copiez sa photo dans assets/images/equipe/ (ex: jean-dupont.jpg)
+#   2. Ajoutez un bloc ci-dessous en respectant l'indentation
+#   3. git add + git commit + git push
+# =============================================================================
+
+# Exemple (décommentez et adaptez) :
+#
+# - nom: "Jean Dupont"
+#   role: "Président"
+#   grade: "Ceinture noire 3ème dan"
+#   photo: /assets/images/equipe/jean-dupont.jpg
+#   bio: "Jean pratique le Jujitsu depuis 1998 et préside le club depuis 2015."
+#
+# - nom: "Marie Martin"
+#   role: "Secrétaire"
+#   grade: "Ceinture noire 1er dan"
+#   photo: /assets/images/equipe/marie-martin.jpg
+#   bio: "Marie assure la coordination administrative et la communication."

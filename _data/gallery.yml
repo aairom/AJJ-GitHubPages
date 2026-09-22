@@ -1,0 +1,26 @@
+# =============================================================================
+# Galerie de photos — Asnières Jujitsu
+# Utilisé pour contrôler l'ordre et les légendes des photos de galerie.
+#
+# Pour ajouter une photo à la galerie :
+#   1. Copiez votre image dans assets/images/gallery/ (ex: cours-2025.jpg)
+#   2. Ajoutez un bloc ci-dessous
+#   3. git add + git commit + git push
+#
+# Si ce fichier est vide ou absent, le site affiche les images du dossier
+# gallery/ dans l'ordre alphabétique automatiquement.
+# =============================================================================
+
+# Exemple (décommentez et adaptez) :
+#
+# - fichier: cours-mardi-01.jpg
+#   legende: "Cours de Jujitsu Traditionnel — Dojo d'Asnières"
+#   alt: "Pratiquants au sol lors d'un cours du mardi"
+#
+# - fichier: tournoi-juin-2025.jpg
+#   legende: "Tournoi interclubs — juin 2025"
+#   alt: "Compétiteurs lors du tournoi interclubs de juin 2025"
+#
+# - fichier: remise-ceintures-2025.jpg
+#   legende: "Passage de ceintures — saison 2024/2025"
+#   alt: "Cérémonie de remise des ceintures"
