@@ -1,0 +1,64 @@
+---
+layout: default
+---
+<article class="section post-article">
+  <div class="container post-container">
+    <header class="post-header">
+      {% if page.featured_image %}
+      <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}" class="post-featured-img">
+      {% endif %}
+      <h1 class="post-title">{{ page.title }}</h1>
+      <div class="post-meta">
+        <span class="post-date">
+          <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+          <time datetime="{{ page.date | date_to_xmlschema }}">
+            {{ page.date | date: "%-d %B %Y" }}
+          </time>
+        </span>
+        {% if page.categories %}
+        <span class="post-cats">
+          <i class="fas fa-tag" aria-hidden="true"></i>
+          {% for cat in page.categories %}
+            <span class="post-cat">{{ cat }}</span>
+          {% endfor %}
+        </span>
+        {% endif %}
+        {% if page.author %}
+        <span class="post-author">
+          <i class="fas fa-user" aria-hidden="true"></i>
+          {{ page.author }}
+        </span>
+        {% endif %}
+      </div>
+    </header>
+
+    <div class="post-content">
+      {{ content }}
+    </div>
+
+    <nav class="post-navigation" aria-label="Navigation entre articles">
+      <div class="post-nav-links">
+        {% if page.previous.url %}
+        <a href="{{ page.previous.url | relative_url }}" class="post-nav-prev" rel="prev">
+          <i class="fas fa-arrow-left" aria-hidden="true"></i>
+          <span>Article précédent</span>
+          <strong>{{ page.previous.title }}</strong>
+        </a>
+        {% endif %}
+        {% if page.next.url %}
+        <a href="{{ page.next.url | relative_url }}" class="post-nav-next" rel="next">
+          <span>Article suivant</span>
+          <strong>{{ page.next.title }}</strong>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        {% endif %}
+      </div>
+    </nav>
+
+    <div class="post-back">
+      <a href="{{ '/blog/' | relative_url }}" class="btn btn-secondary">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Retour au blog
+      </a>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,119 @@
+# =============================================================================
+# Jekyll Configuration — Asnières Ju-Jitsu (AJJ)
+# GitHub Pages compatible
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# Site identity
+# ---------------------------------------------------------------------------
+title: "Asnières Jujitsu"
+description: "Site officiel du club de Jujitsu Traditionnel d'Asnières-sur-Seine. Cours pour tous niveaux, du débutant au compétiteur. Pratique du Jujitsu traditionnel japonais, brésilien et pieds/poings."
+author: "Club Asnières Jujitsu"
+email: "asnieresjujitsu@gmail.com"
+lang: fr
+
+# ---------------------------------------------------------------------------
+# URLs — update these when deploying to GitHub Pages
+# Set baseurl to "" if the site lives at the repo root (username.github.io)
+# Set baseurl to "/repo-name" if hosted at username.github.io/repo-name
+# ---------------------------------------------------------------------------
+url: "https://aairom.github.io"
+baseurl: "/AJJ-GitHubPages"
+
+# ---------------------------------------------------------------------------
+# Build settings
+# ---------------------------------------------------------------------------
+markdown: kramdown
+# No gem-based theme — custom layouts in _layouts/ override everything
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# ---------------------------------------------------------------------------
+# Sass / CSS pipeline
+# ---------------------------------------------------------------------------
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# ---------------------------------------------------------------------------
+# Collections
+# ---------------------------------------------------------------------------
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# ---------------------------------------------------------------------------
+# Defaults (front matter)
+# ---------------------------------------------------------------------------
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      lang: fr
+  - scope:
+      path: "_pages"
+      type: "pages"
+    values:
+      layout: "page"
+      lang: fr
+
+# ---------------------------------------------------------------------------
+# Pagination (for blog list page)
+# ---------------------------------------------------------------------------
+paginate: 6
+paginate_path: "/blog/page:num/"
+
+# ---------------------------------------------------------------------------
+# Exclude from build
+# ---------------------------------------------------------------------------
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/
+  - .git
+  - .gitignore
+  - README.md
+  - DOCUMENTATION.md
+  - AGENTS.md
+  - scripts/
+  - "*.sh"
+
+# ---------------------------------------------------------------------------
+# Include hidden directories needed at build time
+# ---------------------------------------------------------------------------
+include:
+  - _pages
+
+# ---------------------------------------------------------------------------
+# SEO / Social
+# ---------------------------------------------------------------------------
+twitter:
+  username: asnieresjujitsu
+facebook:
+  admins: asnieresjujitsu
+social:
+  name: "Asnières Jujitsu"
+  links:
+    - "https://www.facebook.com/asnieresjujitsu/"
+    - "https://www.instagram.com/le_club_asnieres_ju_jitsu/"
+    - "https://www.youtube.com/channel/UC1etKUzI4-Pd5fwSAFHumKQ"
+
+# ---------------------------------------------------------------------------
+# Club-specific data (available as site.club.* in templates)
+# ---------------------------------------------------------------------------
+club:
+  name: "Asnières Jujitsu"
+  short_name: "AJJ"
+  address: "Gymnase Laura Flessel, 91 boulevard Voltaire, 92600 Asnières-sur-Seine"
+  email: "asnieresjujitsu@gmail.com"
+  facebook: "https://www.facebook.com/asnieresjujitsu/"
+  instagram: "https://www.instagram.com/le_club_asnieres_ju_jitsu/"
+  youtube: "https://www.youtube.com/channel/UC1etKUzI4-Pd5fwSAFHumKQ"
+  inscription_new: "https://tally.so/r/3NDbKQ"
+  inscription_renew: "https://tally.so/r/mK56XA"

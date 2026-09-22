@@ -1,0 +1,449 @@
+---
+layout: default
+title: "Accueil"
+description: "Site officiel du club de Jujitsu Traditionnel d'Asnières-sur-Seine. Cours pour tous niveaux — Jujitsu traditionnel japonais, brésilien et self-défense."
+permalink: /
+---
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     Section Accueil / Hero
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section id="accueil" class="hero" aria-label="Bienvenue">
+  <div class="hero-content">
+    <h2>Bienvenue au Club de Jujitsu Traditionnel d'Asnières</h2>
+    <p>Découvrez l'art martial traditionnel dans une ambiance conviviale</p>
+    <a href="#contact" class="btn btn-primary">Rejoignez-nous</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     Section Actualités
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section id="actualites" class="section" aria-labelledby="titre-actualites">
+  <div class="container">
+    <h2 class="section-title" id="titre-actualites">Actualités</h2>
+    <div class="news-nav">
+      <button class="carousel-arrow" id="newsPrev" aria-label="Actualité précédente">&#8249;</button>
+      <button class="carousel-arrow" id="newsNext" aria-label="Actualité suivante">&#8250;</button>
+    </div>
+    <div class="news-scroll" id="newsScroll">
+      <div id="newsContainer" class="news-grid">
+        {% assign news_posts = site.posts | where: "categories", "actualites" | limit: 6 %}
+        {% if news_posts.size > 0 %}
+          {% for post in news_posts %}
+          <article class="news-card">
+            {% if post.featured_image %}
+            <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}" loading="lazy">
+            {% else %}
+            <img src="{{ '/assets/images/placeholder-news.svg' | relative_url }}" alt="{{ post.title }}">
+            {% endif %}
+            <div class="news-content">
+              <div class="news-date">
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %B %Y" }}</time>
+              </div>
+              <h3><a href="{{ post.url | relative_url }}" style="color:inherit;text-decoration:none;">{{ post.title }}</a></h3>
+              <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+            </div>
+          </article>
+          {% endfor %}
+        {% else %}
+          <!-- Actualités de démonstration (remplacer par de vrais articles) -->
+          <article class="news-card">
+            <img src="{{ '/assets/images/placeholder-news.svg' | relative_url }}" alt="Reprise des cours 2025">
+            <div class="news-content">
+              <div class="news-date"><time datetime="2025-09-01">1 septembre 2025</time></div>
+              <h3>Reprise des cours — saison 2025-2026</h3>
+              <p>La nouvelle saison sportive commence le 16 septembre 2025. Inscriptions ouvertes en ligne et au dojo.</p>
+            </div>
+          </article>
+          <article class="news-card">
+            <img src="{{ '/assets/images/placeholder-news.svg' | relative_url }}" alt="Tournoi interclubs">
+            <div class="news-content">
+              <div class="news-date"><time datetime="2025-06-15">15 juin 2025</time></div>
+              <h3>Tournoi interclubs — résultats</h3>
+              <p>Bravo à tous nos pratiquants pour leurs excellents résultats lors du tournoi interclubs de juin.</p>
+            </div>
+          </article>
+          <article class="news-card">
+            <img src="{{ '/assets/images/placeholder-news.svg' | relative_url }}" alt="Stage de printemps">
+            <div class="news-content">
+              <div class="news-date"><time datetime="2025-04-20">20 avril 2025</time></div>
+              <h3>Stage de printemps</h3>
+              <p>Stage exceptionnel animé par un enseignant de grade national. Ouvert à tous les niveaux.</p>
+            </div>
+          </article>
+        {% endif %}
+      </div>
+    </div>
+    <div class="news-carousel-dots" id="newsDots" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     Section Le Club
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section id="club" class="section bg-light" aria-labelledby="titre-club">
+  <div class="container">
+    <h2 class="section-title" id="titre-club">Le Club</h2>
+    <div class="club-content">
+      <div class="club-text">
+        <h3>Notre Histoire</h3>
+        <p>Le club de Jujitsu Traditionnel d'Asnières est un lieu d'apprentissage et de partage des techniques de debout / pieds-poings et combat au sol. Nous accueillons tous les niveaux, du débutant au compétiteur confirmé.</p>
+
+        <h3>Notre Philosophie</h3>
+        <p>Le Jujitsu Traditionnel est un art martial qui privilégie la technique sur la force. Notre enseignement met l'accent sur le respect, la discipline et le dépassement de soi. Notre adage : <em>« travailler sérieusement sans se prendre au sérieux »</em>.</p>
+
+        <h3>Nos Instructeurs</h3>
+        <p>Notre équipe d'instructeurs qualifiés vous accompagne dans votre progression avec passion et professionnalisme. Le club est affilié à la <strong>Fédération Française de Judo et Disciplines Associées (FFJDA)</strong>.</p>
+      </div>
+      <div class="club-image">
+        <img src="{{ '/assets/images/club-photo.jpg' | relative_url }}"
+             alt="Cours de Jujitsu Traditionnel au Dojo d'Asnières"
+             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23ddd%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23999%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2220%22%3EPhoto du Club%3C/text%3E%3C/svg%3E'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     Section Horaires
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section id="horaires" class="section" aria-labelledby="titre-horaires">
+  <div class="container">
+    <h2 class="section-title" id="titre-horaires">Horaires des Cours</h2>
+    <div class="schedule-grid">
+      <div class="schedule-card">
+        <h3>Mardi</h3>
+        <div class="schedule-item">
+          <span class="time">19h00 – 21h00</span>
+          <span class="level">Tous niveaux (Adhérents JJ)</span>
+        </div>
+      </div>
+      <div class="schedule-card">
+        <h3>Jeudi</h3>
+        <div class="schedule-item">
+          <span class="time">19h00 – 21h00</span>
+          <span class="level">Tous niveaux (Adhérents JJ)</span>
+        </div>
+      </div>
+      <div class="schedule-card">
+        <h3>Samedi</h3>
+        <div class="schedule-item">
+          <span class="time">09h00 – 10h30</span>
+          <span class="level">Adhérents JJ &amp; Remise en Forme</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     Section Calendrier
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section id="calendrier" class="section bg-light" aria-labelledby="titre-calendrier">
+  <div class="container">
+    <h2 class="section-title" id="titre-calendrier">Calendrier des Événements</h2>
+    <div class="calendar-nav">
+      <button class="carousel-arrow" id="calendarPrev" aria-label="Événement précédent">&#8249;</button>
+      <button class="carousel-arrow" id="calendarNext" aria-label="Événement suivant">&#8250;</button>
+    </div>
+    <div class="calendar-scroll" id="calendarScroll">
+      <div id="calendarContainer" class="calendar-container">
+        {% assign event_posts = site.posts | where: "categories", "evenements" %}
+        {% if event_posts.size > 0 %}
+          {% for event in event_posts limit: 8 %}
+          <div class="calendar-event">
+            {% if event.featured_image %}
+            <img src="{{ event.featured_image | relative_url }}" alt="{{ event.title }}" class="event-image" loading="lazy">
+            {% endif %}
+            <div class="event-date">
+              <time datetime="{{ event.date | date_to_xmlschema }}">{{ event.date | date: "%-d %B %Y" }}</time>
+            </div>
+            <div class="event-title">{{ event.title }}</div>
+            <div class="event-description">{{ event.excerpt | strip_html | truncate: 100 }}</div>
+          </div>
+          {% endfor %}
+        {% else %}
+          <!-- Événements de démonstration -->
+          <div class="calendar-event">
+            <div class="event-date"><time datetime="2025-11-15">15 novembre 2025</time></div>
+            <div class="event-title">Passage de ceintures</div>
+            <div class="event-description">Examens de passage de grades — de la ceinture blanche à la ceinture marron.</div>
+          </div>
+          <div class="calendar-event">
+            <div class="event-date"><time datetime="2025-12-20">20 décembre 2025</time></div>
+            <div class="event-title">Dernier cours &amp; fête de fin d'année</div>
+            <div class="event-description">Dernier entraînement de la saison suivi du pot de fin d'année entre pratiquants.</div>
+          </div>
+          <div class="calendar-event">
+            <div class="event-date"><time datetime="2026-01-13">13 janvier 2026</time></div>
+            <div class="event-title">Reprise des cours</div>
+            <div class="event-description">Reprise des entraînements après les vacances de Noël. Toujours les mardi, jeudi et samedi matin.</div>
+          </div>
+          <div class="calendar-event">
+            <div class="event-date"><time datetime="2026-03-07">7 mars 2026</time></div>
+            <div class="event-title">Stage technique spécial</div>
+            <div class="event-description">Stage d'une journée sur les techniques de projection et de self-défense avancée.</div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="calendar-carousel-dots" id="calendarDots" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     Section Tarifs
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section id="tarifs" class="section" aria-labelledby="titre-tarifs">
+  <div class="container">
+    <h2 class="section-title" id="titre-tarifs">Tarifs</h2>
+    <div class="pricing-nav">
+      <button class="carousel-arrow" id="pricingPrev" aria-label="Tarif précédent">&#8249;</button>
+      <button class="carousel-arrow" id="pricingNext" aria-label="Tarif suivant">&#8250;</button>
+    </div>
+    <div class="pricing-scroll" id="pricingScroll">
+      <div class="pricing-grid" id="pricingGrid">
+        <!-- Cours d'essai (toujours en premier) -->
+        <div class="pricing-card">
+          <h3>Cours d'Essai</h3>
+          <div class="price">Gratuit</div>
+          <ul>
+            <li>1 séance découverte</li>
+            <li>Avec ou sans Judo Gi</li>
+            <li>Sans engagement</li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary">Réserver</a>
+        </div>
+        <!-- Adulte -->
+        <div class="pricing-card featured">
+          <h3>Adulte</h3>
+          <div class="price">320 €</div>
+          <ul>
+            <li>Accès illimité</li>
+            <li>Tous les cours</li>
+            <li>Licence incluse</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">S'inscrire</a>
+        </div>
+        <!-- Mineur -->
+        <div class="pricing-card featured">
+          <h3>Mineur</h3>
+          <div class="price">270 €</div>
+          <ul>
+            <li>Accès illimité</li>
+            <li>Tous les cours</li>
+            <li>Licence incluse</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">S'inscrire</a>
+        </div>
+        <!-- Ceinture Noire -->
+        <div class="pricing-card featured">
+          <h3>Ceinture Noire</h3>
+          <div class="price">210 €</div>
+          <ul>
+            <li>Accès illimité</li>
+            <li>Tous les cours</li>
+            <li>Licence incluse</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">S'inscrire</a>
+        </div>
+        <!-- Remise en forme -->
+        <div class="pricing-card">
+          <h3>Remise en Forme</h3>
+          <div class="price">190 €</div>
+          <ul>
+            <li>Accès illimité</li>
+            <li>Samedi matin</li>
+            <li>Année scolaire</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">S'inscrire</a>
+        </div>
+      </div>
+    </div>
+    <div class="pricing-carousel-dots" id="pricingDots" aria-hidden="true"></div>
+
+    <p style="text-align:center;margin-top:1.5rem;color:var(--gray);font-size:0.9rem;">
+      Moyens de paiement acceptés : CB (en ligne), chèques, chèques-vacances, coupons-sport, PASS+, PASS'SPORT, aides CAF.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     Section Galerie
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section id="galerie" class="section bg-light" aria-labelledby="titre-galerie">
+  <div class="container">
+    <h2 class="section-title" id="titre-galerie">Galerie Photos</h2>
+    {% assign gallery_images = site.static_files | where_exp: "f", "f.path contains '/assets/images/gallery/'" %}
+    {% if gallery_images.size > 0 %}
+    <div class="static-gallery-grid" id="galerieContainer">
+      {% for img in gallery_images %}
+      <div class="static-gallery-item">
+        <img src="{{ img.path | relative_url }}" alt="Photo du club Asnières Jujitsu" loading="lazy">
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state">
+      <i class="fas fa-images" aria-hidden="true"></i>
+      <p>Galerie à venir — ajoutez des photos dans <code>assets/images/gallery/</code></p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="galleryLightbox" class="gallery-lightbox" style="display:none;" onclick="closeLightbox()" role="dialog" aria-label="Visionneuse de photos" aria-modal="true">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Fermer la visionneuse">&times;</button>
+  <button class="lightbox-prev" onclick="lightboxNav(-1, event)" aria-label="Photo précédente">&#8249;</button>
+  <button class="lightbox-next" onclick="lightboxNav(1, event)"  aria-label="Photo suivante">&#8250;</button>
+  <div class="lightbox-content" onclick="event.stopPropagation()">
+    <img id="lightboxImg" src="" alt="">
+    <p id="lightboxCaption"></p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     Section Blog (aperçu)
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section id="blog" class="section" aria-labelledby="titre-blog">
+  <div class="container">
+    <h2 class="section-title" id="titre-blog">Blog</h2>
+    <div id="blogPreviewContainer" class="blog-preview-grid">
+      {% if site.posts.size > 0 %}
+        {% for post in site.posts limit: 3 %}
+        <article class="blog-preview-card" onclick="location.href='{{ post.url | relative_url }}'">
+          {% if post.featured_image %}
+          <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}" class="blog-preview-img" loading="lazy">
+          {% endif %}
+          <div class="blog-preview-body">
+            <div class="blog-preview-date">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %B %Y" }}</time>
+            </div>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+            <a href="{{ post.url | relative_url }}" class="blog-read-more">Lire la suite →</a>
+          </div>
+        </article>
+        {% endfor %}
+      {% else %}
+        <div class="empty-state" style="grid-column:1/-1;">
+          <i class="fas fa-feather-alt" aria-hidden="true"></i>
+          <p>Les premiers articles arrivent bientôt !</p>
+        </div>
+      {% endif %}
+    </div>
+    <div style="text-align:center;margin-top:2rem;">
+      <a href="{{ '/blog/' | relative_url }}" class="btn btn-secondary">Voir tous les articles</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     Section Newsletter
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section id="newsletter" class="section bg-light" aria-labelledby="titre-newsletter">
+  <div class="container">
+    <h2 class="section-title" id="titre-newsletter">Newsletter</h2>
+    <div class="newsletter-wrapper">
+      <p class="newsletter-desc">Restez informé de nos actualités, événements et résultats. Inscrivez-vous à notre newsletter !</p>
+      <form id="newsletterForm" class="newsletter-form" data-action="">
+        <input type="text"  id="nlName"  name="name"  placeholder="Votre nom (optionnel)" aria-label="Votre nom">
+        <input type="email" id="nlEmail" name="email" placeholder="Votre adresse e-mail *" required aria-label="Votre adresse e-mail" aria-required="true">
+        <button type="submit" class="btn btn-primary">S'inscrire</button>
+      </form>
+      <div id="newsletterMsg" class="newsletter-msg" style="display:none;" role="alert" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     Section Contact
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section id="contact" class="section" aria-labelledby="titre-contact">
+  <div class="container">
+    <h2 class="section-title" id="titre-contact">Contact</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Informations</h3>
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+          <div>
+            <strong>Adresse</strong>
+            <address>
+              Le Dojo<br>
+              Gymnase Laura Flessel<br>
+              91 boulevard Voltaire<br>
+              92600 Asnières-sur-Seine
+            </address>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <div>
+            <strong>Email</strong>
+            <p><a href="mailto:asnieresjujitsu@gmail.com" style="color:inherit;">asnieresjujitsu@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+          <div>
+            <strong>Inscription en ligne</strong>
+            <p>
+              <a href="{{ site.club.inscription_new }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top:.5rem;display:inline-block;">Nouvelle inscription</a>
+              <a href="{{ site.club.inscription_renew }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="margin-top:.5rem;display:inline-block;">Réinscription</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Envoyez-nous un message</h3>
+        <form id="contactForm" data-action="">
+          <input type="text"  name="name"    placeholder="Nom" required aria-label="Votre nom" aria-required="true">
+          <input type="email" name="email"   placeholder="Adresse e-mail" required aria-label="Votre adresse e-mail" aria-required="true">
+          <input type="text"  name="subject" placeholder="Sujet" required aria-label="Sujet du message" aria-required="true">
+          <textarea name="message" placeholder="Message" rows="5" required aria-label="Votre message" aria-required="true"></textarea>
+          <button type="submit" class="btn btn-primary">Envoyer</button>
+        </form>
+        <p style="margin-top:1rem;font-size:0.85rem;color:var(--gray);">
+          ℹ️ Pour activer l'envoi de formulaire, configurez Formspree et renseignez l'URL dans <code>data-action=""</code> ou dans <code>_config.yml</code>.
+        </p>
+      </div>
+
+      <div class="contact-map">
+        <h3>Localisation</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.8!2d2.2875!3d48.9167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66f9c8c8c8c8d%3A0x8c8c8c8c8c8c8c8c!2s91%20Boulevard%20Voltaire%2C%2092600%20Asni%C3%A8res-sur-Seine!5e0!3m2!1sfr!2sfr!4v1234567890"
+          width="100%"
+          height="300"
+          style="border:0; border-radius:8px;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Carte : Gymnase Laura Flessel, Asnières-sur-Seine"
+          aria-label="Carte Google Maps — Gymnase Laura Flessel">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal d'inscription -->
+<div id="registrationModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titre">
+  <div class="modal-content">
+    <button class="modal-close" aria-label="Fermer">&times;</button>
+    <h2 id="modal-titre">Choisissez votre type d'inscription</h2>
+    <div class="modal-buttons">
+      <a href="{{ site.club.inscription_new }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary modal-btn">
+        <i class="fas fa-user-plus" aria-hidden="true"></i>
+        Nouvelle Inscription
+      </a>
+      <a href="{{ site.club.inscription_renew }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary modal-btn">
+        <i class="fas fa-redo" aria-hidden="true"></i>
+        Réinscription
+      </a>
+    </div>
+  </div>
+</div>

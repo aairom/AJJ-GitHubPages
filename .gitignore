@@ -1,0 +1,67 @@
+# =============================================================================
+# .gitignore — Asnières Jujitsu Jekyll Site
+# =============================================================================
+
+# --- Jekyll build output ---
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# --- Gems / Bundler ---
+vendor/
+.bundle/
+Gemfile.lock
+
+# --- Environment / secrets ---
+.env
+.env.*
+!.env.example
+
+# --- macOS ---
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# --- Windows ---
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- Node.js (not used by Jekyll, but safety) ---
+node_modules/
+npm-debug.log*
+
+# --- Python (safety net) ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# --- Logs ---
+*.log
+logs/
+
+# --- Data / uploads (runtime content not in git) ---
+data/
+uploads/
+
+# --- Large binary formats ---
+*.onnx
+*.onnx.data
+*.so
+*.tgz
+*.tar.gz
+*.zip
+*.dylib
+
+# --- Private source folders starting with underscore ---
+_sources/
+_images/
+_docs/
+
+# --- Bob/tooling ---
+.playwright-mcp/
+.bob/mcp.json
+AGENTS.md

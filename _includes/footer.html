@@ -1,0 +1,58 @@
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>{{ site.club.name }}</h4>
+        <p>Club de Jujitsu Traditionnel</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Liens Rapides</h4>
+        <ul>
+          <li><a href="{{ '/#accueil' | relative_url }}">Accueil</a></li>
+          <li><a href="{{ '/#club' | relative_url }}">Le Club</a></li>
+          <li><a href="{{ '/#horaires' | relative_url }}">Horaires</a></li>
+          <li><a href="{{ '/#contact' | relative_url }}">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Plus de contenu</h4>
+        <ul>
+          <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+          <li><a href="{{ '/#galerie' | relative_url }}">Galerie Photos</a></li>
+          <li><a href="{{ '/#newsletter' | relative_url }}">Newsletter</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Suivez-nous</h4>
+        <div class="social-links">
+          <a href="{{ site.club.facebook }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook Asnières Jujitsu">
+            <i class="fab fa-facebook" aria-hidden="true"></i>
+          </a>
+          <a href="{{ site.club.instagram }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram Asnières Jujitsu">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="{{ site.club.youtube }}" target="_blank" rel="noopener noreferrer" aria-label="YouTube Asnières Jujitsu">
+            <i class="fab fa-youtube" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4 class="footer-other-title">Autres…</h4>
+        <ul>
+          <li><a href="{{ '/faq/' | relative_url }}">FAQ</a></li>
+          <li><a href="{{ '/quest-ce-que-le-ju-jitsu/' | relative_url }}">Qu'est-ce le Ju-Jitsu</a></li>
+          <li><a href="{{ '/comite-directeur/' | relative_url }}">Notre comité directeur</a></li>
+          <li><a href="{{ '/5-bonnes-raisons/' | relative_url }}">5 bonnes raisons de pratiquer</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="footerYear"></span> Asnières Jujitsu. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>

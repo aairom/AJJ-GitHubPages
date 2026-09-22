@@ -1,0 +1,51 @@
+<header>
+  <nav class="navbar" aria-label="Navigation principale">
+    <div class="container">
+      <a href="{{ '/' | relative_url }}" class="logo" aria-label="Accueil Asnières Jujitsu">
+        <img src="{{ '/assets/images/cropped-AJJ_Original-2024_vectorise.png' | relative_url }}"
+             alt="Logo Asnières Jujitsu"
+             width="50" height="50">
+        <span class="logo-text">Asnières Jujitsu</span>
+      </a>
+
+      <ul class="nav-menu" id="navMenu" role="menubar">
+        <li role="none">
+          <a href="{{ '/#accueil' | relative_url }}" class="nav-link{% if page.url == '/' %} active{% endif %}" role="menuitem">Accueil</a>
+        </li>
+        <li role="none">
+          <a href="{{ '/#actualites' | relative_url }}" class="nav-link" role="menuitem">Actualités</a>
+        </li>
+        <li role="none">
+          <a href="{{ '/#club' | relative_url }}" class="nav-link" role="menuitem">Le Club</a>
+        </li>
+        <li role="none">
+          <a href="{{ '/remise-en-forme/' | relative_url }}" class="nav-link{% if page.url contains 'remise-en-forme' %} active{% endif %}" role="menuitem">Remise en forme</a>
+        </li>
+        <li role="none">
+          <a href="{{ '/#horaires' | relative_url }}" class="nav-link" role="menuitem">Horaires</a>
+        </li>
+        <li role="none">
+          <a href="{{ '/#calendrier' | relative_url }}" class="nav-link" role="menuitem">Calendrier</a>
+        </li>
+        <li role="none">
+          <a href="{{ '/#galerie' | relative_url }}" class="nav-link" role="menuitem">Galerie</a>
+        </li>
+        <li role="none">
+          <a href="{{ '/blog/' | relative_url }}" class="nav-link{% if page.url contains '/blog' %} active{% endif %}" role="menuitem">Blog</a>
+        </li>
+        <li role="none">
+          <a href="{{ '/#tarifs' | relative_url }}" class="nav-link" role="menuitem">Tarifs</a>
+        </li>
+        <li role="none">
+          <a href="{{ '/#contact' | relative_url }}" class="nav-link" role="menuitem">Contact</a>
+        </li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
