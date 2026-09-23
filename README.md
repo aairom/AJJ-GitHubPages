@@ -276,14 +276,14 @@ Or use the helper script:
 
 ## 🌍 Custom Domain (Optional)
 
-By default the site is served at `https://aairom.github.io/AJJ-GitHubPages/`. To serve it from a custom domain (e.g. `www.asnieresjujitsu.fr`):
+By default the site is served at `https://aairom.github.io/AJJ-GitHubPages/`. To serve it from a custom domain (e.g. `www.asnieresjujitsu.com`):
 
 ### 1 — Create the `CNAME` file
 
 Create a file named `CNAME` in the repository root containing only your domain:
 
 ```
-www.asnieresjujitsu.fr
+www.asnieresjujitsu.com
 ```
 
 > **Important:** Adding a `CNAME` file changes the `baseurl` behaviour. Update `_config.yml` accordingly:
