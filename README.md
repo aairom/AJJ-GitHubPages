@@ -310,7 +310,7 @@ At your DNS provider (Cloudflare, OVH, Gandi, etc.), add the following records:
 ### 3 — Enable in GitHub repository settings
 
 1. Go to your repository on GitHub → **Settings → Pages**.
-2. Under **Custom domain**, enter `www.asnieresjujitsu.fr` and click **Save**.
+2. Under **Custom domain**, enter `www.asnieresjujitsu.com` and click **Save**.
 3. Check **Enforce HTTPS** once the TLS certificate has been provisioned (usually a few minutes).
 
 DNS propagation can take up to 24–48 hours. You can verify propagation with:
