@@ -305,7 +305,7 @@ At your DNS provider (Cloudflare, OVH, Gandi, etc.), add the following records:
 | `A` | `@` | `185.199.111.153` |
 | `CNAME` | `www` | `aairom.github.io` |
 
-> Use `A` records for the apex domain (`asnieresjujitsu.fr`) and a `CNAME` for the `www` subdomain.
+> Use `A` records for the apex domain (`asnieresjujitsu.com`) and a `CNAME` for the `www` subdomain.
 
 ### 3 — Enable in GitHub repository settings
 
