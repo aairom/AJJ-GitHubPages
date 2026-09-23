@@ -278,20 +278,20 @@ Ou utiliser le script utilitaire :
 
 ## 🌍 Nom de domaine personnalisé (optionnel)
 
-Par défaut, le site est servi à l'adresse `https://aairom.github.io/AJJ-GitHubPages/`. Pour le servir depuis un domaine personnalisé (par ex. `www.asnieresjujitsu.fr`) :
+Par défaut, le site est servi à l'adresse `https://aairom.github.io/AJJ-GitHubPages/`. Pour le servir depuis un domaine personnalisé (par ex. `www.asnieresjujitsu.com`) :
 
 ### 1 — Créer le fichier `CNAME`
 
 Créer un fichier nommé `CNAME` à la racine du dépôt, contenant uniquement le nom de domaine :
 
 ```
-www.asnieresjujitsu.fr
+www.asnieresjujitsu.com
 ```
 
 > **Important :** l'ajout d'un fichier `CNAME` modifie le comportement de `baseurl`. Mettre à jour `_config.yml` en conséquence :
 >
 > ```yaml
-> url:     "https://www.asnieresjujitsu.fr"
+> url:     "https://www.asnieresjujitsu.com"
 > baseurl: ""
 > ```
 
@@ -307,18 +307,18 @@ Chez votre fournisseur DNS (Cloudflare, OVH, Gandi, etc.), ajouter les enregistr
 | `A`     | `@`  | `185.199.111.153` |
 | `CNAME` | `www` | `aairom.github.io` |
 
-> Utiliser des enregistrements `A` pour le domaine apex (`asnieresjujitsu.fr`) et un `CNAME` pour le sous-domaine `www`.
+> Utiliser des enregistrements `A` pour le domaine apex (`asnieresjujitsu.com`) et un `CNAME` pour le sous-domaine `www`.
 
 ### 3 — Activer dans les paramètres du dépôt GitHub
 
 1. Accéder au dépôt sur GitHub → **Settings → Pages**.
-2. Dans **Custom domain**, saisir `www.asnieresjujitsu.fr` et cliquer sur **Save**.
+2. Dans **Custom domain**, saisir `www.asnieresjujitsu.com` et cliquer sur **Save**.
 3. Cocher **Enforce HTTPS** une fois le certificat TLS provisionné (généralement en quelques minutes).
 
 La propagation DNS peut prendre jusqu'à 24 à 48 heures. Pour vérifier :
 
 ```bash
-dig www.asnieresjujitsu.fr +noall +answer
+dig www.asnieresjujitsu.com +noall +answer
 ```
 
 ---
