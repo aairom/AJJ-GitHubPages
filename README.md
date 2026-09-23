@@ -1,5 +1,7 @@
 # Asnières Jujitsu — Site Web Jekyll
 
+🇫🇷 [Lire en français](README.fr.md)
+
 [![Déploiement Jekyll → GitHub Pages](https://github.com/aairom/AJJ-GitHubPages/actions/workflows/jekyll.yml/badge.svg)](https://github.com/aairom/AJJ-GitHubPages/actions/workflows/jekyll.yml)
 
 Static website of the **Asnières Ju-Jitsu** club (Asnières-sur-Seine, France), built with [Jekyll](https://jekyllrb.com/) and deployed on [GitHub Pages](https://pages.github.com/) at zero cost.
