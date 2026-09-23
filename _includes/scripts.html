@@ -1,6 +1,8 @@
 <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+<!-- Chatbot assistant AJJ — chargé en dernier pour ne pas bloquer le rendu -->
+<script src="{{ '/assets/js/chatbot.js' | relative_url }}" defer></script>
 <script>
-  // Set current year in footer
+  // Année courante dans le pied de page
   document.addEventListener('DOMContentLoaded', function () {
     var el = document.getElementById('footerYear');
     if (el) el.textContent = new Date().getFullYear();
