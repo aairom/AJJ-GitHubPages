@@ -1,0 +1,75 @@
+# =============================================================================
+# .bobignore — Asnières Jujitsu Jekyll Site
+# Controls which files Bob can access and modify.
+# Follows .gitignore syntax — see:
+# https://internal.bob.ibm.com/docs/ide/configuration/bobignore
+# https://internal.bob.ibm.com/docs/ide/security/bob-security-guidance
+# =============================================================================
+
+# --- Secrets & credentials ---
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+secrets/
+config/credentials.json
+*password*
+*credential*
+*apikey*
+*secret*
+
+# --- Jekyll build output (generated, not source) ---
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# --- Gems / Bundler lock ---
+vendor/
+.bundle/
+Gemfile.lock
+
+# --- Node.js ---
+node_modules/
+
+# --- Python virtualenvs ---
+.venv/
+venv/
+__pycache__/
+
+# --- Logs ---
+*.log
+logs/
+
+# --- Large binary / media assets ---
+*.onnx
+*.onnx.data
+*.so
+*.tgz
+*.tar.gz
+*.zip
+*.dylib
+*.mp4
+*.mov
+*.avi
+
+# --- Private source folders (underscore-prefixed by convention) ---
+_sources/
+_images/
+_docs/
+
+# --- macOS system files ---
+.DS_Store
+.AppleDouble
+._*
+
+# --- Git internals ---
+.git/
+
+# --- Bob / tooling internals ---
+.bob/
+.playwright-mcp/
