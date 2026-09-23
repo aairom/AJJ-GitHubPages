@@ -289,7 +289,7 @@ www.asnieresjujitsu.com
 > **Important:** Adding a `CNAME` file changes the `baseurl` behaviour. Update `_config.yml` accordingly:
 >
 > ```yaml
-> url:     "https://www.asnieresjujitsu.fr"
+> url:     "https://www.asnieresjujitsu.com"
 > baseurl: ""
 > ```
 
